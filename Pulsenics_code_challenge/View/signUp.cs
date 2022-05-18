@@ -75,5 +75,9 @@ namespace Pulsenics_code_challenge
             this.Hide();
         }
 
+        private void nameInput_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

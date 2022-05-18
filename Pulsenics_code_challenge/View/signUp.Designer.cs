@@ -79,7 +79,7 @@
             this.nameInput.Name = "nameInput";
             this.nameInput.Size = new System.Drawing.Size(455, 38);
             this.nameInput.TabIndex = 3;
-            this.nameInput.Text = "t";
+            this.nameInput.TextChanged += new System.EventHandler(this.nameInput_TextChanged);
             // 
             // emailInput
             // 
