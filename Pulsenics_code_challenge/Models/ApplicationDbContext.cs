@@ -13,16 +13,6 @@ namespace Pulsenics_code_challenge
 
 
         private string DbPath = @"C:\Users\chino\Desktop\db\testDb.db";
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder.UseSqlite("FileName=pulsenicsDB", option =>
-        //    {
-        //        option.MigrationsAssembly(Assembly.GetExecutingAssembly().Name);
-
-        //    });
-        //    base.OnConfiguring(optionsBuilder);
-
-        //}
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
