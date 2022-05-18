@@ -59,9 +59,7 @@
             this.fileNameLabel.Name = "fileNameLabel";
             this.fileNameLabel.Size = new System.Drawing.Size(82, 31);
             this.fileNameLabel.TabIndex = 1;
-            this.fileNameLabel.Text = "label1";
-            this.fileNameLabel.Click += new System.EventHandler(this.fileNameLabel_Click);
-            // 
+            this.fileNameLabel.Text = "label1";            // 
             // fileCreateTime
             // 
             this.fileCreateTime.AutoSize = true;
@@ -70,7 +68,6 @@
             this.fileCreateTime.Size = new System.Drawing.Size(82, 31);
             this.fileCreateTime.TabIndex = 2;
             this.fileCreateTime.Text = "label2";
-            this.fileCreateTime.Click += new System.EventHandler(this.fileCreateTime_Click);
             // 
             // fileUpdateTime
             // 
@@ -107,7 +104,6 @@
             this.userList.Name = "userList";
             this.userList.Size = new System.Drawing.Size(303, 810);
             this.userList.TabIndex = 6;
-            this.userList.SelectedIndexChanged += new System.EventHandler(this.userList_SelectedIndexChanged);
             // 
             // userLabel
             // 
@@ -117,7 +113,6 @@
             this.userLabel.Size = new System.Drawing.Size(82, 31);
             this.userLabel.TabIndex = 7;
             this.userLabel.Text = "label3";
-            this.userLabel.Click += new System.EventHandler(this.userLabel_Click);
             // 
             // currentUserLabel
             // 

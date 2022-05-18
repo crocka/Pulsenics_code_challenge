@@ -80,7 +80,6 @@
             this.nameInput.Size = new System.Drawing.Size(455, 38);
             this.nameInput.TabIndex = 3;
             this.nameInput.Text = "t";
-            this.nameInput.TextChanged += new System.EventHandler(this.nameInput_TextChanged);
             // 
             // emailInput
             // 
@@ -88,7 +87,6 @@
             this.emailInput.Name = "emailInput";
             this.emailInput.Size = new System.Drawing.Size(455, 38);
             this.emailInput.TabIndex = 4;
-            this.emailInput.TextChanged += new System.EventHandler(this.emailInput_TextChanged);
             // 
             // phoneInput
             // 
@@ -96,7 +94,6 @@
             this.phoneInput.Name = "phoneInput";
             this.phoneInput.Size = new System.Drawing.Size(455, 38);
             this.phoneInput.TabIndex = 5;
-            this.phoneInput.TextChanged += new System.EventHandler(this.phoneInput_TextChanged);
             // 
             // signUpButton
             // 
@@ -116,7 +113,6 @@
             this.signInLabel.Size = new System.Drawing.Size(308, 31);
             this.signInLabel.TabIndex = 7;
             this.signInLabel.Text = "Already have an account?";
-            this.signInLabel.Click += new System.EventHandler(this.signInLabel_Click);
             // 
             // goToSignInButton
             // 
@@ -143,7 +139,6 @@
             this.Controls.Add(this.emailLabel);
             this.Controls.Add(this.nameLabel);
             this.Name = "signUp";
-            this.Load += new System.EventHandler(this.signUp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

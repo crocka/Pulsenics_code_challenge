@@ -212,23 +212,16 @@ namespace Pulsenics_code_challenge
         public static void RemoveAllUserFilesFromUserId(int id)
         {
 
-
             var user = _dbContext.Users?.Where(user => user.Id == id).First();
-            var files = user.Files?.ToList();
 
-            if (files != null)
+            var user_files = _dbContext.User_files.Where(uf => uf.UserId == id);
+
+            foreach (var user_file in user_files)
             {
+                _dbContext.User_files?.Remove(user_file);
 
-                foreach (var file in files)
-                {
-
-                    //_dbContext.Users?.Remove(user_file);
-
-                    user.Files.Remove(file);
-                    _dbContext.SaveChanges();
-                }
+                _dbContext.SaveChanges();
             }
         }
-
     }
 }

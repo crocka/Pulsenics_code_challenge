@@ -17,26 +17,8 @@ namespace Pulsenics_code_challenge
             InitializeComponent();
             
         }
-        
-        ApplicationDbContext _dbContext = new();
-
+       
         public static User CurrentUser { get; set; }
-
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void emailInput_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void signIn_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void signInButton_Click(object sender, EventArgs e)
         {
@@ -44,7 +26,7 @@ namespace Pulsenics_code_challenge
             try
             {
                 //if email exists in database, go to main page
-                var user = _dbContext.Users?.Where(user => user.Email == emailInput.Text).First();
+                var user = Program._dbContext.Users?.Where(user => user.Email == emailInput.Text).First();
 
                 CurrentUser = user;
 

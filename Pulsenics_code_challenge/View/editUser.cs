@@ -4,22 +4,12 @@ namespace Pulsenics_code_challenge
 {
     public partial class editUser : Form
     {
-        //public static List<User_file> user_files = Program._dbContext.User_files?.Where(User_file => User_file.UserId == signIn.CurrentUser.Id).ToList();
 
         public List<File> savedFiles = Program.FindFilesFromUserId(signIn.CurrentUser.Id);
-
-        ApplicationDbContext _dbContext = new();
-
-        //private string filePath = @"C:\Users\chino\Desktop\pulsenics";
 
         public editUser()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void editUser_Load(object sender, EventArgs e)
@@ -60,11 +50,6 @@ namespace Pulsenics_code_challenge
             }
         }
 
-        private void nameInput_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void fileList_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -75,10 +60,8 @@ namespace Pulsenics_code_challenge
 
                 if (file != null && addedFileList.Items.Contains(file.Name) == false)
                 {
-
                     addedFileList.Items.Add(file.Name);
                     savedFiles.Add(file);
-                    //MessageBox.Show(savedFiles.Count().ToString());
                 }
 
             }
@@ -92,59 +75,46 @@ namespace Pulsenics_code_challenge
         private void saveButton_Click(object sender, EventArgs e)
         {
 
-            //try
-            //{
-            //save user
-            User? user = Program._dbContext.Users?.Where(user => user.Id == signIn.CurrentUser.Id).FirstOrDefault();
-
-            user.Name = nameInput.Text;
-            user.Email = emailInput.Text;
-            user.Phone = phoneInput.Text;
-
-            Program._dbContext.SaveChanges();
-
-            ICollection<File> files = new List<File>();
-
-            Program.RemoveAllUserFilesFromUserId(signIn.CurrentUser.Id);
-
-            foreach (var item in addedFileList.Items)
+            try
             {
-                User_file user_files = new();
+                //save user
+                User? user = Program._dbContext.Users?.Where(user => user.Id == signIn.CurrentUser.Id).FirstOrDefault();
 
-                File file = Program.FindFileFromFileName(item.ToString());
-
-                User_file uf = new();
-
-                uf.UserId = signIn.CurrentUser.Id;
-                uf.FileId = file.Id;
-                uf.User = user;
-                uf.File = file;
-
-                Program._dbContext.User_files.Add(uf);
-
-
-                //files.Add(file);
-
+                user.Name = nameInput.Text;
+                user.Email = emailInput.Text;
+                user.Phone = phoneInput.Text;
                 Program._dbContext.SaveChanges();
+                Program.RemoveAllUserFilesFromUserId(signIn.CurrentUser.Id);
 
-                //}
+                ICollection<File> files = new List<File>();
+
+                foreach (var item in addedFileList.Items)
+                {
+
+                    File file = Program.FindFileFromFileName(item.ToString());
+
+                    User_file uf = new();
+
+                    uf.UserId = signIn.CurrentUser.Id;
+                    uf.FileId = file.Id;
+                    uf.User = user;
+                    uf.File = file;
+
+                    Program._dbContext.User_files.Add(uf);
+
+                    Program._dbContext.SaveChanges();
+                }
+
+                main mainPage = new();
+                mainPage.Show();
+                this.Hide();
 
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            //Program._dbContext.Users.Add(new User {Name= nameInput.Text, Email= emailInput.Text, Phone= phoneInput.Text, Files=files});
-
-            //Program._dbContext.SaveChanges();
-
-            main mainPage = new();
-            mainPage.Show();
-            this.Hide();
-
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            //}
+            }
 
         }
 
@@ -157,13 +127,7 @@ namespace Pulsenics_code_challenge
                 addedFileList.Items.Remove(selectedFile);
                 var file = Program.FindFileFromFileName(selectedFile);
                 savedFiles.Remove(file);
-                MessageBox.Show(savedFiles.Count().ToString());
             }
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

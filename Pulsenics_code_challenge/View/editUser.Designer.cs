@@ -58,7 +58,6 @@
             this.nameLabel.Size = new System.Drawing.Size(83, 31);
             this.nameLabel.TabIndex = 1;
             this.nameLabel.Text = "Name";
-            this.nameLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -84,7 +83,6 @@
             this.nameInput.Name = "nameInput";
             this.nameInput.Size = new System.Drawing.Size(307, 38);
             this.nameInput.TabIndex = 4;
-            this.nameInput.TextChanged += new System.EventHandler(this.nameInput_TextChanged);
             // 
             // emailInput
             // 
@@ -128,7 +126,6 @@
             this.label1.Size = new System.Drawing.Size(175, 31);
             this.label1.TabIndex = 9;
             this.label1.Text = "List of All Files";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // label4
             // 

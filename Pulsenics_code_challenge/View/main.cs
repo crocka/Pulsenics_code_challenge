@@ -27,13 +27,11 @@ namespace Pulsenics_code_challenge
         {
             try
             {
-
-                selectedFile = Program.FindFileFromFileName(fileList?.SelectedItem?.ToString());
-
                 //Update label texts
-
-                if (selectedFile != null)
+                if (fileList?.SelectedItem != null)
                 {
+
+                    selectedFile = Program.FindFileFromFileName(fileList?.SelectedItem?.ToString());
 
                     fileNameLabel.Text = selectedFile.Name;
 
@@ -41,8 +39,6 @@ namespace Pulsenics_code_challenge
 
                     fileUpdateTime.Text = selectedFile.Updated_at;
                 }
-
-
 
                 //Update userList
                 var users = Program.FindUsersFromFileId(selectedFile.Id);
@@ -110,32 +106,12 @@ namespace Pulsenics_code_challenge
 
         }
 
-        private void userList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void userLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void editUserButton_Click(object sender, EventArgs e)
         {
             //go to edit user page
             editUser editUser = new();
             editUser.Show();
             this.Hide();
-        }
-
-        private void fileNameLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fileCreateTime_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void searchButton_Click(object sender, EventArgs e)

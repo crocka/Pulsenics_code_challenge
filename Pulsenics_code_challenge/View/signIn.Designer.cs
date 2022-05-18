@@ -41,7 +41,6 @@
             this.emailLabel.Size = new System.Drawing.Size(74, 31);
             this.emailLabel.TabIndex = 0;
             this.emailLabel.Text = "Email";
-            this.emailLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // signInButton
             // 
@@ -59,7 +58,6 @@
             this.emailInput.Name = "emailInput";
             this.emailInput.Size = new System.Drawing.Size(200, 38);
             this.emailInput.TabIndex = 3;
-            this.emailInput.TextChanged += new System.EventHandler(this.emailInput_TextChanged);
             // 
             // signIn
             // 
@@ -71,7 +69,6 @@
             this.Controls.Add(this.emailLabel);
             this.Name = "signIn";
             this.Text = "signIn";
-            this.Load += new System.EventHandler(this.signIn_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

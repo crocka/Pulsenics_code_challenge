@@ -7,18 +7,6 @@ namespace Pulsenics_code_challenge
             InitializeComponent();
         }
 
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void nameInput_TextChanged(object sender, EventArgs e)
-        {
-            Console.WriteLine(nameInput.Text);
-        }
-
         private void signUpButton_Click(object sender, EventArgs e)
         {
             // save user to database
@@ -78,11 +66,6 @@ namespace Pulsenics_code_challenge
 
         }
 
-        private void signInLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void goToSignInButton_Click(object sender, EventArgs e)
         {
             //Application.Run(new sign());
@@ -92,20 +75,5 @@ namespace Pulsenics_code_challenge
             this.Hide();
         }
 
-        private void emailInput_TextChanged(object sender, EventArgs e)
-        {
-            Console.WriteLine(emailInput.Text);
-
-        }
-
-        private void phoneInput_TextChanged(object sender, EventArgs e)
-        {
-            Console.WriteLine(phoneInput.Text);
-        }
-
-        private void signUp_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
